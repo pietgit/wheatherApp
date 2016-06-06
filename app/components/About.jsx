@@ -6,10 +6,18 @@ var React = require('react');
 //beceause the render function essentialy just return
 
 var About = (props) => (
-    <div>
-      <h2>About</h2>
-      <p>Welcome to the about page</p>
-    </div>
+  <div>
+      <h1 className="text-center">About</h1>
+      <p>This is the about page. Its used for:</p>
+      <ul>
+        <li>
+          Telling you about the app.
+        </li>
+        <li>
+          Linking to stuff you might want to know.
+       </li>
+      </ul>
+  </div>
     );
 
 module.exports = About;

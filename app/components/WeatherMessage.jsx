@@ -10,7 +10,7 @@ var WeatherMessage = React.createClass({
 //new props syntax:
 var WeatherMessage = ({temp,city}) =>
   (
-    <h2>It is {temp} degrees celsius in {city}</h2>
+    <h3 className="text-center">It is {temp} degrees celsius in {city}</h3>
   );
 
 module.exports = WeatherMessage;
