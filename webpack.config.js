@@ -1,11 +1,26 @@
+var webpack = require('webpack');
+
 
 //Exports object that specifies what webpack does
 module.exports = {
-  entry: './app/app.jsx',
+  //react are indicated in the translator part below
+  //jquery and foundation needs to loaded before app.jsx, because it will use it
+  //script! indicates that the webpack script-loader module will be used
+  entry: ['script!jquery/dist/jquery.min.js','script!foundation-sites/dist/foundation.min.js','./app/app.jsx'],
   output: {
     path: __dirname, //this is a node global var, gets current directory
     filename: './public/bundle.js'
   },
+  externals: {
+    //used to provide values that will be available as global variables
+    jquery: 'jQuery'
+  },
+  plugins: [
+    new webpack.ProvidePlugin({
+      '$': 'jquery',
+      'jQuery':'jquery'
+    })
+  ],
   resolve: {//which files we're going to work with
       extensions: ['','.js','.jsx'],
       root: __dirname,
